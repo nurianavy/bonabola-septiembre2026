@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BONABOLA · Reporte Email Marketing · Septiembre 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:        #0A1018;
+    --bg-2:      #0F1622;
+    --card:      #121A28;
+    --card-2:    #161F2E;
+    --line:      rgba(255,255,255,.06);
+    --line-2:    rgba(255,255,255,.10);
+    --text:      #E6EAF2;
+    --text-dim:  #8A93A6;
+    --text-mute: #5E677A;
+
+    --green:     #3DE5A5;
+    --green-soft:rgba(61,229,165,.12);
+    --green-ln:  rgba(61,229,165,.35);
+
+    --orange:    #F59E5F;
+    --orange-soft:rgba(245,158,95,.10);
+    --orange-ln: rgba(245,158,95,.40);
+
+    --red:       #F26D6D;
+    --red-soft:  rgba(242,109,109,.10);
+
+    --purple:    #A78BFA;
+    --yellow:    #F2C84B;
+    --magenta:   #EC4899;
+
+    --font-display: 'Mona Sans', system-ui, sans-serif;
+    --font-body:    'Inter', system-ui, sans-serif;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+
+  .topbar{
+    position: sticky; top:0; z-index: 50;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 22px 5vw;
+    background: rgba(10,16,24,.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar__brand{
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: .32em;
+    color: #fff;
+  }
+  .pill{
+    display:inline-flex; align-items:center; gap:8px;
+    padding: 8px 16px;
+    border: 1px solid var(--green-ln);
+    border-radius: 999px;
+    font-size: 12px;
+    letter-spacing: .04em;
+    color: var(--green);
+    background: var(--green-soft);
+    font-weight: 500;
+  }
+
+  .hero{ padding: 100px 5vw 80px; position: relative; overflow: hidden; }
+  .hero__eyebrow{
+    display:inline-block;
+    color: var(--green);
+    font-size: 12px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 36px;
+  }
+  .hero__title{
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(56px, 9vw, 132px);
+    line-height: .92;
+    letter-spacing: -.025em;
+    color: var(--text);
+  }
+  .hero__title .accent{
+    color: var(--green);
+    display: block;
+  }
+  .hero__lead{
+    margin-top: 36px;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--text-dim);
+    max-width: 720px;
+  }
+
+  .meta-grid{
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1100px;
+  }
+  .meta-card{
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+  }
+  .meta-card__label{
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .meta-card__value{
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+    color: var(--text);
+  }
+
+  section{
+    padding: 90px 5vw;
+    border-top: 1px solid var(--line);
+  }
+  .sect-num{
+    color: var(--green);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: .08em;
+    margin-bottom: 20px;
+  }
+  .sect-title{
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(38px, 5.5vw, 76px);
+    line-height: .98;
+    letter-spacing: -.022em;
+    color: var(--text);
+    max-width: 1200px;
+  }
+  .sect-lead{
+    margin-top: 32px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--text-dim);
+    max-width: 820px;
+  }
+  .sect-lead b{ color: var(--text); font-weight: 500 }
+
+  /* ---------- MILESTONE HERO CARD ---------- */
+  .milestone{
+    margin-top: 56px;
+    background: linear-gradient(135deg, var(--orange-soft), transparent 70%), var(--card);
+    border: 1px solid var(--orange-ln);
+    border-radius: 20px;
+    padding: 48px 44px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 44px;
+    align-items: center;
+  }
+  .milestone__badge{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 14px;
+  }
+  .milestone__number{
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 120px;
+    line-height: 1;
+    letter-spacing: -.04em;
+    color: var(--orange);
+  }
+  .milestone__title{
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.15;
+    letter-spacing: -.015em;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+  .milestone__body{
+    font-size: 15px;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 600px;
+  }
+  .milestone__body b{ color: var(--text); font-weight: 500 }
+
+  .kpi-grid{
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+  .kpi{
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 26px 24px 24px;
+    overflow: hidden;
+  }
+  .kpi::before{
+    content:"";
+    position: absolute; left: 16px; right: 16px; top: 0;
+    height: 2px; border-radius: 0 0 2px 2px;
+    background: var(--green);
+  }
+  .kpi--orange::before{ background: var(--orange) }
+  .kpi--purple::before{ background: var(--purple) }
+  .kpi--yellow::before{ background: var(--yellow) }
+  .kpi--red::before   { background: var(--red) }
+  .kpi--magenta::before{ background: var(--magenta) }
+
+  .kpi__label{
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+    font-weight: 500;
+    margin-bottom: 18px;
+  }
+  .kpi__value{
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 52px;
+    line-height: 1;
+    letter-spacing: -.025em;
+    color: var(--text);
+    margin-bottom: 14px;
+  }
+  .kpi__value small{
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-dim);
+    letter-spacing: 0;
+    margin-left: 2px;
+  }
+  .kpi__sub{
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.55;
+    margin-bottom: 16px;
+  }
+  .kpi__sub b{ color: var(--text); font-weight: 500 }
+
+  .badge{
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .01em;
+  }
+  .badge--good{ background: var(--green-soft); color: var(--green) }
+  .badge--bad { background: var(--red-soft);   color: var(--red) }
+  .badge--warn{ background: var(--orange-soft);color: var(--orange) }
+  .badge--neutral{ background: rgba(255,255,255,.05); color: var(--text-dim) }
+  .badge .arr{ font-size: 11px }
+
+  .trend{
+    display: inline-flex; align-items: baseline; gap: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .02em;
+  }
+  .trend--up   { color: var(--green) }
+  .trend--down { color: var(--red) }
+  .trend--flat { color: var(--text-dim) }
+  .trend small { color: var(--text-mute); font-weight: 400 }
+
+  .data-wrap{
+    margin-top: 48px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 8px 0;
+    overflow-x: auto;
+  }
+  .data{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .data thead th{
+    text-align: left;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--line);
+    white-space: nowrap;
+  }
+  .data tbody td{
+    padding: 22px 24px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: middle;
+  }
+  .data tbody tr:last-child td{ border-bottom: none }
+  .data .name{
+    font-weight: 500;
+    color: var(--text);
+    font-size: 15px;
+  }
+  .data .meta{
+    font-size: 12px;
+    color: var(--text-mute);
+    margin-top: 4px;
+  }
+  .data .num{
+    font-variant-numeric: tabular-nums;
+    color: var(--text);
+    font-weight: 500;
+  }
+  .data .num small{ color: var(--text-mute); font-size: 12px; font-weight: 400 }
+
+  .evo{
+    margin-top: 56px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .evo table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .evo th{
+    text-align: left;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+    padding: 22px 28px;
+    border-bottom: 1px solid var(--line);
+    background: rgba(255,255,255,.02);
+  }
+  .evo td{
+    padding: 22px 28px;
+    border-bottom: 1px solid var(--line);
+    font-variant-numeric: tabular-nums;
+    color: var(--text);
+  }
+  .evo tr:last-child td{ border-bottom: none }
+  .evo td.lbl{ color: var(--text-dim); font-size: 13px }
+  .evo td.val{ font-family: var(--font-display); font-weight: 700; font-size: 18px }
+  .evo td.tr{ text-align: right }
+
+  .insights{
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .insight{
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 28px 26px;
+    position: relative;
+    overflow: hidden;
+  }
+  .insight::before{
+    content:"";
+    position: absolute; left: 0; top: 26px; bottom: 26px;
+    width: 2px;
+    background: var(--green);
+  }
+  .insight--warn::before{ background: var(--orange) }
+  .insight--bad::before { background: var(--red) }
+
+  .insight__num{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: .18em;
+    color: var(--green);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .insight--warn .insight__num{ color: var(--orange) }
+  .insight--bad  .insight__num{ color: var(--red) }
+  .insight__title{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.35;
+    color: var(--text);
+    margin-bottom: 14px;
+    letter-spacing: -.005em;
+  }
+  .insight__body{
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-dim);
+  }
+
+  .banner{
+    margin-top: 36px;
+    padding: 26px 32px;
+    border-radius: 16px;
+    border: 1px solid var(--green-ln);
+    background: linear-gradient(180deg, var(--green-soft), transparent 80%);
+    display: flex; gap: 24px; align-items: flex-start;
+  }
+  .banner--warn{
+    border-color: var(--orange-ln);
+    background: linear-gradient(180deg, var(--orange-soft), transparent 80%);
+  }
+  .banner__tag{
+    flex: 0 0 auto;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: .04em;
+    color: var(--green);
+    padding-top: 2px;
+  }
+  .banner--warn .banner__tag{ color: var(--orange) }
+  .banner__text{
+    color: var(--text-dim);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .banner__text b{ color: var(--text); font-weight: 500 }
+
+  .actions{
+    margin-top: 48px;
+    list-style: none;
+    display: grid;
+    gap: 12px;
+    counter-reset: act;
+  }
+  .actions li{
+    counter-increment: act;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 28px 30px;
+    display: grid;
+    grid-template-columns: 80px 1fr 200px;
+    gap: 32px;
+    align-items: start;
+  }
+  .actions li::before{
+    content: counter(act, decimal-leading-zero);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--green);
+    letter-spacing: -.02em;
+    line-height: 1;
+  }
+  .act__title{
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--text);
+    margin-bottom: 10px;
+    line-height: 1.4;
+    letter-spacing: -.005em;
+  }
+  .act__body{
+    font-size: 14px;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+  .act__meta{
+    text-align: right;
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+    padding-top: 6px;
+    font-weight: 500;
+  }
+  .act__meta b{
+    display: block;
+    margin-top: 6px;
+    color: var(--green);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: .02em;
+    text-transform: none;
+  }
+  .act__meta.high b   { color: var(--orange) }
+  .act__meta.medium b { color: var(--text-dim) }
+
+  .quote-wrap{
+    padding: 110px 5vw;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(180deg, var(--bg-2), var(--bg));
+  }
+  .quote{
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(28px, 3.8vw, 48px);
+    line-height: 1.25;
+    letter-spacing: -.02em;
+    color: var(--text);
+    max-width: 1100px;
+  }
+  .quote em{
+    font-style: normal;
+    color: var(--green);
+  }
+
+  footer.foot{
+    padding: 80px 5vw 70px;
+    border-top: 1px solid var(--line);
+  }
+  .foot__row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: end;
+    font-size: 12px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+  }
+  .foot__brand{
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: .32em;
+    font-size: 16px;
+  }
+
+  @media (max-width: 1100px){
+    .kpi-grid{ grid-template-columns: repeat(2, 1fr) }
+    .meta-grid{ grid-template-columns: repeat(2, 1fr) }
+    .insights{ grid-template-columns: 1fr }
+    .actions li{ grid-template-columns: 60px 1fr; }
+    .act__meta{ grid-column: 2; text-align: left }
+    .data thead, .evo thead{ display: none }
+    .data tbody td, .evo td{ display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 10px 24px; border: none; text-align: right }
+    .data tbody td::before, .evo td::before{
+      content: attr(data-label);
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+      font-weight: 500;
+      flex: 0 0 auto;
+      text-align: left;
+    }
+    .data tbody td:first-child, .evo td:first-child{
+      display: block;
+      text-align: left;
+      padding-top: 20px;
+      padding-bottom: 14px;
+    }
+    .data tbody td:first-child::before, .evo td:first-child::before{ display: none }
+    .data tbody tr, .evo tr{ display: block; padding: 12px 0 20px; border-bottom: 1px solid var(--line) }
+    .data tbody tr:last-child, .evo tr:last-child{ border-bottom: none }
+    .kpi__value{ font-size: 42px }
+    .milestone{ grid-template-columns: 1fr; gap: 24px; padding: 32px 28px }
+    .milestone__number{ font-size: 88px }
+    .milestone__title{ font-size: 24px }
+  }
+  @media (max-width: 640px){
+    section{ padding: 70px 5vw }
+    .hero{ padding: 70px 5vw 60px }
+    .hero__title{ font-size: 56px }
+    .kpi-grid, .meta-grid{ grid-template-columns: 1fr }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__brand">B O N A B O L A</div>
+  <div class="pill">Septiembre 2026 · Email Marketing · Klaviyo</div>
+</div>
+
+<header class="hero">
+  <span class="hero__eyebrow">Navy Marketing · Reporte de rendimiento</span>
+  <h1 class="hero__title">
+    Email Marketing
+    <span class="accent">Septiembre 2026</span>
+  </h1>
+  <p class="hero__lead">
+    El mes más intenso del canal desde su activación. Ejecución doble
+    de rebajas y lanzamiento de la nueva colección, apertura al mercado
+    internacional con versiones en inglés, base multiplicada por cuatro
+    y activación del flujo del recomendador de pala. En paralelo, un mes
+    sin conversiones atribuidas que marca el punto de atención del periodo.
+  </p>
+
+  <div class="meta-grid">
+    <div class="meta-card">
+      <div class="meta-card__label">Periodo</div>
+      <div class="meta-card__value">01 Sept · 30 Sept 2026</div>
+    </div>
+    <div class="meta-card">
+      <div class="meta-card__label">Plataforma</div>
+      <div class="meta-card__value">Klaviyo · Shopify</div>
+    </div>
+    <div class="meta-card">
+      <div class="meta-card__label">Mercado</div>
+      <div class="meta-card__value">España 🇪🇸 · Inglés 🌍</div>
+    </div>
+    <div class="meta-card">
+      <div class="meta-card__label">Fase</div>
+      <div class="meta-card__value">Expansión</div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ 01. RESUMEN EJECUTIVO ============ -->
+<section>
+  <div class="sect-num">01 · Resumen Ejecutivo</div>
+  <h2 class="sect-title">El mes más intenso<br>del canal</h2>
+  <p class="sect-lead">
+    Septiembre marca un salto cuantitativo histórico: <b>3.985 entregas
+    totales</b> (+429 % vs agosto), <b>807 nuevos suscriptores</b> (+6.625 %)
+    y <b>10 campañas enviadas</b> frente a las 2 habituales. Se ejecutan
+    las dos grandes campañas pendientes (rebajas + lanzamiento de nueva
+    colección), se abre comunicación en inglés por primera vez y se activa
+    el flujo del recomendador de pala. El contrapunto: <b>0 conversiones
+    atribuidas</b> en un mes sin ventas registradas ni por email ni por web.
+  </p>
+
+  <!-- MILESTONE HERO -->
+  <div class="milestone">
+    <div>
+      <div class="milestone__badge">Hito del periodo</div>
+      <div class="milestone__number">807</div>
+    </div>
+    <div>
+      <div class="milestone__title">Nuevos suscriptores: la base se multiplica x4.</div>
+      <div class="milestone__body">
+        El canal pasa de ~230 destinatarios activos a <b>1.012 suscriptores
+        totales</b> (+338 %), con <b>807 altas nuevas</b> procedentes
+        principalmente del formulario B2C de Meta Ads y del tráfico del
+        lanzamiento. Es el primer periodo con la integración <b>Shopify
+        + Klaviyo</b> plenamente operativa y marca el inicio de la fase
+        de expansión del canal.
+      </div>
+    </div>
+  </div>
+
+  <!-- KPI ROW 1 -->
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="kpi__label">Entregas totales</div>
+      <div class="kpi__value">3.985</div>
+      <div class="kpi__sub">Volumen del mes</div>
+      <span class="trend trend--up">▲ +429,2 % <small>vs agosto</small></span>
+    </div>
+    <div class="kpi">
+      <div class="kpi__label">Suscriptores totales</div>
+      <div class="kpi__value">1.012</div>
+      <div class="kpi__sub"><b>807</b> nuevos este mes</div>
+      <span class="trend trend--up">▲ +338,1 % <small>vs agosto</small></span>
+    </div>
+    <div class="kpi kpi--purple">
+      <div class="kpi__label">Campañas enviadas</div>
+      <div class="kpi__value">10</div>
+      <div class="kpi__sub">Rebajas + colección + versiones en inglés</div>
+      <span class="trend trend--up">▲ +6 <small>vs agosto</small></span>
+    </div>
+    <div class="kpi kpi--red">
+      <div class="kpi__label">Conversiones atribuidas</div>
+      <div class="kpi__value">0</div>
+      <div class="kpi__sub">Sin ventas registradas ni por email ni por web</div>
+      <span class="trend trend--down">▼ -100 % <small>vs agosto</small></span>
+    </div>
+  </div>
+
+  <!-- KPI ROW 2 -->
+  <div class="kpi-grid">
+    <div class="kpi kpi--purple">
+      <div class="kpi__label">Apertura · Campañas</div>
+      <div class="kpi__value">32,51<small>%</small></div>
+      <div class="kpi__sub">1.318 aperturas sobre 3.985 entregas</div>
+      <span class="trend trend--down">▼ -13,0 % <small>por dilución del volumen</small></span>
+    </div>
+    <div class="kpi kpi--yellow">
+      <div class="kpi__label">Clic · Campañas</div>
+      <div class="kpi__value">1,67<small>%</small></div>
+      <div class="kpi__sub">Bueno según referencia Klaviyo</div>
+      <span class="trend trend--down">▼ -15,8 % <small>vs agosto</small></span>
+    </div>
+    <div class="kpi">
+      <div class="kpi__label">Clic · Flujos</div>
+      <div class="kpi__value">8,06<small>%</small></div>
+      <div class="kpi__sub">Nuevo máximo histórico del canal</div>
+      <span class="trend trend--up">▲ +85,3 % <small>vs agosto</small></span>
+    </div>
+    <div class="kpi kpi--magenta">
+      <div class="kpi__label">Flujos activos</div>
+      <div class="kpi__value">6</div>
+      <div class="kpi__sub">Incluye recomendador de pala activado</div>
+      <span class="trend trend--up">▲ +2 <small>vs agosto</small></span>
+    </div>
+  </div>
+
+  <div class="banner">
+    <div class="banner__tag">✓ Lo bueno</div>
+    <div class="banner__text">
+      El canal entra en <b>fase de expansión real</b>. La integración
+      Shopify + Klaviyo queda operativa, se ejecutan las dos grandes
+      campañas pendientes, aparece la comunicación en inglés por primera
+      vez, el <b>flujo del recomendador de pala</b> se activa con un
+      18,89 % de clic y <b>Abandono de navegación</b> consolida su rol
+      como mejor flujo del canal (56,58 % apertura · 3,95 % clic).
+    </div>
+  </div>
+
+  <div class="banner banner--warn">
+    <div class="banner__tag">▲ A tener en cuenta</div>
+    <div class="banner__text">
+      <b>Cero conversiones atribuidas en un mes sin ventas ni por email
+      ni por web.</b> No es un problema de atribución: no se vendió. El
+      lanzamiento de colección y las rebajas movieron tráfico pero no
+      conversión. También suben las bajas (+211 %) y el rebote (+50 %),
+      consecuencia natural del crecimiento x4 con leads de ads todavía
+      por cualificar.
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02. CAMPAÑAS ============ -->
+<section>
+  <div class="sect-num">02 · Campañas Enviadas</div>
+  <h2 class="sect-title">Diez campañas,<br>dos grandes bloques</h2>
+  <p class="sect-lead">
+    Las 10 campañas del mes se agrupan en <b>tres bloques narrativos</b>:
+    el email personal del inicio del mes como prueba de formato, el
+    <b>bloque de rebajas</b> (15-17 sept) con dos envíos principales más
+    seguimiento, y el <b>lanzamiento de la nueva colección</b> (21-22 sept)
+    con dos piezas (presentación + disponible). Cuatro de los diez envíos
+    son versiones en inglés, estrenando canal internacional.
+  </p>
+
+  <div class="data-wrap">
+    <table class="data">
+      <thead>
+        <tr>
+          <th>Campaña</th>
+          <th>Fecha</th>
+          <th class="num">Dest.</th>
+          <th class="num">Aperturas</th>
+          <th class="num">Clics</th>
+          <th class="num">Conv.</th>
+          <th>Lectura</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Campaña">
+            <div class="name">Newsletter · EMAIL PERSONAL</div>
+            <div class="meta">Prueba formato Gmail · texto plano, sin diseño</div>
+          </td>
+          <td data-label="Fecha"><span class="num">3 sept · 18:00</span></td>
+          <td class="num" data-label="Dest.">243</td>
+          <td class="num" data-label="Aperturas">85 <small>· 34,98 %</small></td>
+          <td class="num" data-label="Clics">0 <small>· 0 %</small></td>
+          <td class="num" data-label="Conv.">0</td>
+          <td data-label="Lectura"><span class="badge badge--warn">Formato · a optimizar</span></td>
+        </tr>
+        <tr>
+          <td data-label="Campaña">
+            <div class="name">Newsletter · REBAJAS EMAIL 1</div>
+            <div class="meta">Bloque sale · envío principal ES</div>
+          </td>
+          <td data-label="Fecha"><span class="num">15 sept · 20:26</span></td>
+          <td class="num" data-label="Dest.">257</td>
+          <td class="num" data-label="Aperturas">70 <small>· 27,24 %</small></td>
+          <td class="num" data-label="Clics">6 <small>· 2,34 %</small></td>
+          <td class="num" data-label="Conv.">0</td>
+          <td data-label="Lectura"><span class="badge badge--neutral">Sale · arranque</span></td>
+        </tr>
+        <tr>
+          <td data-label="Campaña">
+            <div class="name">Newsletter · REBAJAS EMAIL 1 (inglés)</div>
+            <div class="meta">Bloque sale · versión EN</div>
+          </td>
+          <td data-label="Fecha"><span class="num">15 sept · 20:31</span></td>
+          <td class="num" data-label="Dest.">6</td>
+          <td class="num" data-label="Aperturas">2 <small>· 33,33 %</small></td>
+          <td class="num" data-label="Clics">0 <small>· 0 %</small></td>
+          <td class="num" data-label="Conv.">0</td>
+          <td data-label="Lectura"><span class="badge badge--neutral">Muestra EN · base pequeña</span></td>
+        </tr>
+        <tr>
+          <td data-label="Campaña">
+            <div class="name">Newsletter · REBAJAS EMAIL 2</div>
+            <div class="meta">Bloque sale · segundo envío ES</div>
+          </td>
+          <td data-label="Fecha"><span class="num">16 sept · 18:00</span></td>
+          <td class="num" data-label="Dest.">567</td>
+          <td class="num" data-label="Aperturas">126 <small>· 22,22 %</small></td>
+          <td class="num" data-label="Clics">8 <small>· 1,41 %</small></td>
+          <td class="num" data-label="Conv.">0</td>
+          <td data-label="Lectura"><span class="badge badge--warn">Sale · apertura baja</span></td>
+        </tr>
+        <tr>
+          <td data-label="Campaña">
+            <div class="name">Newsletter · REBAJAS EMAIL 2 (inglés)</div>
+            <div class="meta">Bloque sale · segundo envío EN</div>
+          </td>
+          <td data-label="Fecha"><span class="num">16 sept · 18:00</span></td>
+          <td class="num" data-label="Dest.">6</td>
+          <td class="num" data-label="Aperturas">2 <small>· 33,33 %</small></td>
+          <td class="num" data-label="Clics">1 <small>· 16,67 %</small></td>
+          <td class="num" data-label="Conv.">0</td>
+          <td data-label="Lectura"><span class="badge badge--good">Clic alto · base pequeña</span></td>
+        </tr>
+        <tr>
+          <td data-label="Campaña">
+            <div class="name">Newsletter · REBAJAS seguimiento</div>
+            <div class="meta">Bloque sale · recordatorio ES</div>
+          </td>
+          <td data-label="Fecha"><span class="num">17 sept · 18:30</span></td>
+          <td class="num" data-label="Dest.">513</td>
+          <td class="num" data-label="Aperturas">164 <small>· 31,97 %</small></td>
+          <td class="num" data-label="Clics">12 <small>· 2,34 %</small></td>
+          <td class="num" data-label="Conv.">0</td>
+          <td data-label="Lectura"><span class="badge badge--good">Mejor envío del bloque sale</span></td>
+        </tr>
+        <tr>
+          <td data-label="Campaña">
+            <div class="name">Newsletter · Presentación nueva colección</div>
+            <div class="meta">Lanzamiento · teaser ES</div>
+          </td>
+          <td data-label="Fecha"><span class="num">21 sept · 17:00</span></td>
+          <td class="num" data-label="Dest.">574</td>
+          <td class="num" data-label="Aperturas">212 <small>· 36,93 %</small></td>
+          <td class="num" data-label="Clics">12 <small>· 2,09 %</small></td>
+          <td class="num" data-label="Conv.">0</td>
+          <td data-label="Lectura"><span class="badge badge--good">Lanzamiento · teaser sólido</span></td>
+        </tr>
+        <tr>
+          <td data-label="Campaña">
+            <div class="name">Newsletter · Presentación nueva colección (inglés)</div>
+            <div class="meta">Lanzamiento · teaser EN</div>
+          </td>
+          <td data-label="Fecha"><span class="num">21 sept · 18:00</span></td>
+          <td class="num" data-label="Dest.">33</td>
+          <td class="num" data-label="Aperturas">15 <small>· 45,46 %</small></td>
+          <td class="num" data-label="Clics">1 <small>· 3,03 %</small></td>
+          <td class="num" data-label="Conv.">0</td>
+          <td data-label="Lectura"><span class="badge badge--good">Apertura excelente EN</span></td>
+        </tr>
+        <tr>
+          <td data-label="Campaña">
+            <div class="name">Newsletter · Nueva colección disponible</div>
+            <div class="meta">Lanzamiento · día D ES</div>
+          </td>
+          <td data-label="Fecha"><span class="num">22 sept · 18:00</span></td>
+          <td class="num" data-label="Dest.">588</td>
+          <td class="num" data-label="Aperturas">224 <small>· 38,10 %</small></td>
+          <td class="num" data-label="Clics">6 <small>· 1,02 %</small></td>
+          <td class="num" data-label="Conv.">0</td>
+          <td data-label="Lectura"><span class="badge badge--warn">Lanzamiento · clic bajo</span></td>
+        </tr>
+        <tr>
+          <td data-label="Campaña">
+            <div class="name">Newsletter · Nueva colección disponible (inglés)</div>
+            <div class="meta">Lanzamiento · día D EN</div>
+          </td>
+          <td data-label="Fecha"><span class="num">22 sept · 18:00</span></td>
+          <td class="num" data-label="Dest.">31</td>
+          <td class="num" data-label="Aperturas">16 <small>· 51,61 %</small></td>
+          <td class="num" data-label="Clics">1 <small>· 3,23 %</small></td>
+          <td class="num" data-label="Conv.">0</td>
+          <td data-label="Lectura"><span class="badge badge--good">Mejor apertura del mes</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="insights">
+    <div class="insight">
+      <div class="insight__num">Lectura A</div>
+      <div class="insight__title">El inglés abre mejor que el español.</div>
+      <div class="insight__body">
+        Las cuatro versiones en inglés promedian <b style="color:var(--green)">40,88 %</b>
+        de apertura frente al <b>31,22 %</b> de las versiones en español.
+        Base pequeña (76 destinatarios en total) pero muy cualificada.
+        Confirma que la apertura internacional está empezando con un
+        <b>público altamente interesado</b> y que merece la pena invertir
+        en consolidar la base en inglés.
+      </div>
+    </div>
+    <div class="insight insight--warn">
+      <div class="insight__num">Lectura B</div>
+      <div class="insight__title">El email personal rompió, pero no clicó.</div>
+      <div class="insight__body">
+        La pieza en formato Gmail (3 sept) consiguió <b>34,98 %</b> de
+        apertura pero <b style="color:var(--orange)">0 %</b> de clic.
+        El formato rompe con lo habitual del canal (positivo), pero la
+        CTA se perdió. Para la próxima: mantener el formato texto plano
+        pero con <b>una CTA clara al final</b> con enlace visible.
+      </div>
+    </div>
+    <div class="insight insight--warn">
+      <div class="insight__num">Lectura C</div>
+      <div class="insight__title">Lanzamiento con tráfico, sin venta.</div>
+      <div class="insight__body">
+        Los dos envíos del lanzamiento (presentación + disponible)
+        suman <b>1.162 destinatarios</b> y <b>436 aperturas</b> pero
+        solo generan <b style="color:var(--orange)">18 clics</b> y
+        <b>0 conversiones</b>. El tráfico llegó al email, no llegó
+        a web, y donde llegó no convirtió. Punto clave a trabajar
+        en octubre: <b>el CTA del lanzamiento</b>.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03. FLUJOS ============ -->
+<section>
+  <div class="sect-num">03 · Flujos Automatizados</div>
+  <h2 class="sect-title">Recomendador<br>activado y a tope</h2>
+  <p class="sect-lead">
+    El sistema de flujos añade dos activos clave: el <b>flujo del
+    recomendador de pala</b> (formulario B2C Meta Ads) con un
+    <b>18,89 % de clic</b>, y la <b>Bienvenida Sale Privada</b>,
+    enviada una vez a 666 destinatarios y pausada después (ahora
+    en estado draft). El <b>POP UP</b>, desglosado por emails,
+    revela un patrón claro: el primer email engancha (8,7 % clic),
+    pero el segundo y el tercero caen a <b>0 % de clic</b>.
+    Abandono de navegación consolida su rol como mejor flujo del canal.
+  </p>
+
+  <div class="data-wrap">
+    <table class="data">
+      <thead>
+        <tr>
+          <th>Flujo</th>
+          <th>Estado</th>
+          <th class="num">Dest.</th>
+          <th class="num">Aperturas</th>
+          <th class="num">Clics</th>
+          <th class="num">Conv.</th>
+          <th>Diagnóstico</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Flujo">
+            <div class="name">Formulario palas B2C Meta</div>
+            <div class="meta">Recomendador de pala · lead de Meta Ads</div>
+          </td>
+          <td data-label="Estado"><span class="badge badge--good">Live</span></td>
+          <td class="num" data-label="Dest.">360</td>
+          <td class="num" data-label="Aperturas">159 <small>· 44,17 %</small></td>
+          <td class="num" data-label="Clics">68 <small>· 18,89 %</small></td>
+          <td class="num" data-label="Conv.">0</td>
+          <td data-label="Diagnóstico"><span class="badge badge--good">Clic récord del canal</span></td>
+        </tr>
+        <tr>
+          <td data-label="Flujo">
+            <div class="name">Abandono de navegación</div>
+            <div class="meta">Tracking Shopify operativo</div>
+          </td>
+          <td data-label="Estado"><span class="badge badge--good">Live</span></td>
+          <td class="num" data-label="Dest.">76</td>
+          <td class="num" data-label="Aperturas">43 <small>· 56,58 %</small></td>
+          <td class="num" data-label="Clics">3 <small>· 3,95 %</small></td>
+          <td class="num" data-label="Conv.">0</td>
+          <td data-label="Diagnóstico"><span class="badge badge--good">Mejor ratio apertura</span></td>
+        </tr>
+        <tr>
+          <td data-label="Flujo">
+            <div class="name">POP UP · Email 1 · Día 0</div>
+            <div class="meta">"Tu 10% de bienvenida está aquí"</div>
+          </td>
+          <td data-label="Estado"><span class="badge badge--good">Live</span></td>
+          <td class="num" data-label="Dest.">23</td>
+          <td class="num" data-label="Aperturas">10 <small>· 43,5 %</small></td>
+          <td class="num" data-label="Clics">2 <small>· 8,7 %</small></td>
+          <td class="num" data-label="Conv.">0</td>
+          <td data-label="Diagnóstico"><span class="badge badge--good">Engancha · clic alto</span></td>
+        </tr>
+        <tr>
+          <td data-label="Flujo">
+            <div class="name">POP UP · Email 2 · Día 2</div>
+            <div class="meta">"Así se fabrica una pala Bonabola..."</div>
+          </td>
+          <td data-label="Estado"><span class="badge badge--good">Live</span></td>
+          <td class="num" data-label="Dest.">20</td>
+          <td class="num" data-label="Aperturas">5 <small>· 25 %</small></td>
+          <td class="num" data-label="Clics">0 <small>· 0 %</small></td>
+          <td class="num" data-label="Conv.">0</td>
+          <td data-label="Diagnóstico"><span class="badge badge--warn">Educativo · 0 % clic</span></td>
+        </tr>
+        <tr>
+          <td data-label="Flujo">
+            <div class="name">POP UP · Email 3 · Día 5</div>
+            <div class="meta">"Cómo saber qué pala necesitas"</div>
+          </td>
+          <td data-label="Estado"><span class="badge badge--good">Live</span></td>
+          <td class="num" data-label="Dest.">17</td>
+          <td class="num" data-label="Aperturas">5 <small>· 29,4 %</small></td>
+          <td class="num" data-label="Clics">0 <small>· 0 %</small></td>
+          <td class="num" data-label="Conv.">0</td>
+          <td data-label="Diagnóstico"><span class="badge badge--warn">Educativo · 0 % clic</span></td>
+        </tr>
+        <tr>
+          <td data-label="Flujo">
+            <div class="name">Bienvenida Sale Privada</div>
+            <div class="meta">Enviado una vez y pausado</div>
+          </td>
+          <td data-label="Estado"><span class="badge badge--neutral">Draft</span></td>
+          <td class="num" data-label="Dest.">666</td>
+          <td class="num" data-label="Aperturas">180 <small>· 27,03 %</small></td>
+          <td class="num" data-label="Clics">21 <small>· 3,15 %</small></td>
+          <td class="num" data-label="Conv.">0</td>
+          <td data-label="Diagnóstico"><span class="badge badge--neutral">Pausado tras envío único</span></td>
+        </tr>
+        <tr>
+          <td data-label="Flujo">
+            <div class="name">POP UP · 10 % descuento (inglés)</div>
+            <div class="meta">Versión EN · base pequeña</div>
+          </td>
+          <td data-label="Estado"><span class="badge badge--good">Live</span></td>
+          <td class="num" data-label="Dest.">3</td>
+          <td class="num" data-label="Aperturas">0 <small>· 0 %</small></td>
+          <td class="num" data-label="Clics">0 <small>· 0 %</small></td>
+          <td class="num" data-label="Conv.">0</td>
+          <td data-label="Diagnóstico"><span class="badge badge--neutral">Volumen bajo · esperar data</span></td>
+        </tr>
+        <tr>
+          <td data-label="Flujo">
+            <div class="name">NEWSLETTER · 10 % descuento</div>
+            <div class="meta">Formulario web ES</div>
+          </td>
+          <td data-label="Estado"><span class="badge badge--good">Live</span></td>
+          <td class="num" data-label="Dest.">2</td>
+          <td class="num" data-label="Aperturas">0 <small>· 0 %</small></td>
+          <td class="num" data-label="Clics">0 <small>· 0 %</small></td>
+          <td class="num" data-label="Conv.">0</td>
+          <td data-label="Diagnóstico"><span class="badge badge--neutral">Volumen muy bajo</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="insights">
+    <div class="insight">
+      <div class="insight__num">Hallazgo 01</div>
+      <div class="insight__title">El recomendador funciona.</div>
+      <div class="insight__body">
+        <b style="color:var(--green)">18,89 %</b> de clic en 360 destinatarios
+        es el <b>mejor registro de un flujo</b> en toda la historia del canal.
+        El formato de ads con formulario de perfil de juego + recomendación
+        automatizada es el patrón más efectivo que tenemos ahora mismo.
+        Convierte muy bien a clic. Siguiente paso: medir qué pasa después
+        del clic en la nueva web Shopify.
+      </div>
+    </div>
+    <div class="insight">
+      <div class="insight__num">Hallazgo 02</div>
+      <div class="insight__title">Abandono de navegación, mejor que nunca.</div>
+      <div class="insight__body">
+        <b style="color:var(--green)">56,58 %</b> de apertura y
+        <b style="color:var(--green)">3,95 %</b> de clic. Mejor registro
+        del flujo desde su activación. Confirma que el tráfico que llega
+        al mismo es el más cualificado del sistema y que el copy actual
+        funciona bien para esta audiencia.
+      </div>
+    </div>
+    <div class="insight insight--warn">
+      <div class="insight__num">Hallazgo 03</div>
+      <div class="insight__title">POP UP: el primer email engancha, los siguientes no.</div>
+      <div class="insight__body">
+        Desglosado por email, el POP UP muestra un patrón claro: el
+        <b style="color:var(--green)">Email 1 (Día 0)</b> rinde al
+        <b>8,7 % de clic</b> (la persona viene buscando el 10 %), pero
+        el <b style="color:var(--orange)">Email 2 y Email 3</b> caen a
+        <b>0 % de clic</b>, pese a mantener aperturas razonables (25 % y
+        29,4 %). El formato educativo abre pero no mueve a la acción.
+        Punto de intervención claro para octubre.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04. EVOLUCIÓN ============ -->
+<section>
+  <div class="sect-num">04 · Evolución del canal</div>
+  <h2 class="sect-title">Cómo se mueve el canal</h2>
+  <p class="sect-lead">
+    Comparativa directa entre agosto (último mes de la fase de consolidación)
+    y septiembre (primer mes de la fase de expansión). El salto cuantitativo
+    es histórico, con la contrapartida de la caída a cero en conversiones.
+  </p>
+
+  <div class="evo">
+    <table>
+      <thead>
+        <tr>
+          <th>Métrica</th>
+          <th class="tr">Agosto 2026</th>
+          <th class="tr">Septiembre 2026</th>
+          <th class="tr">Variación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="lbl" data-label="Métrica">Entregas totales</td>
+          <td class="val tr" data-label="Agosto 2026">753</td>
+          <td class="val tr" data-label="Septiembre 2026">3.985</td>
+          <td class="tr" data-label="Variación"><span class="trend trend--up">▲ +429,2 %</span></td>
+        </tr>
+        <tr>
+          <td class="lbl" data-label="Métrica">Suscriptores totales</td>
+          <td class="val tr" data-label="Agosto 2026">231</td>
+          <td class="val tr" data-label="Septiembre 2026">1.012</td>
+          <td class="tr" data-label="Variación"><span class="trend trend--up">▲ +338,1 %</span></td>
+        </tr>
+        <tr>
+          <td class="lbl" data-label="Métrica">Nuevos suscriptores</td>
+          <td class="val tr" data-label="Agosto 2026">12</td>
+          <td class="val tr" data-label="Septiembre 2026">807</td>
+          <td class="tr" data-label="Variación"><span class="trend trend--up">▲ +6.625 %</span></td>
+        </tr>
+        <tr>
+          <td class="lbl" data-label="Métrica">Campañas enviadas</td>
+          <td class="val tr" data-label="Agosto 2026">2</td>
+          <td class="val tr" data-label="Septiembre 2026">10</td>
+          <td class="tr" data-label="Variación"><span class="trend trend--up">▲ +400 %</span></td>
+        </tr>
+        <tr>
+          <td class="lbl" data-label="Métrica">Apertura campañas</td>
+          <td class="val tr" data-label="Agosto 2026">37,37 %</td>
+          <td class="val tr" data-label="Septiembre 2026">32,51 %</td>
+          <td class="tr" data-label="Variación"><span class="trend trend--down">▼ -13,0 %</span></td>
+        </tr>
+        <tr>
+          <td class="lbl" data-label="Métrica">Clic campañas</td>
+          <td class="val tr" data-label="Agosto 2026">1,98 %</td>
+          <td class="val tr" data-label="Septiembre 2026">1,67 %</td>
+          <td class="tr" data-label="Variación"><span class="trend trend--down">▼ -15,8 %</span></td>
+        </tr>
+        <tr>
+          <td class="lbl" data-label="Métrica">Clic flujos</td>
+          <td class="val tr" data-label="Agosto 2026">4,35 %</td>
+          <td class="val tr" data-label="Septiembre 2026">8,06 %</td>
+          <td class="tr" data-label="Variación"><span class="trend trend--up">▲ +85,3 %</span></td>
+        </tr>
+        <tr>
+          <td class="lbl" data-label="Métrica">Conversiones atribuidas</td>
+          <td class="val tr" data-label="Agosto 2026">1</td>
+          <td class="val tr" data-label="Septiembre 2026">0</td>
+          <td class="tr" data-label="Variación"><span class="trend trend--down">▼ -100 %</span></td>
+        </tr>
+        <tr>
+          <td class="lbl" data-label="Métrica">Tasa de rebote</td>
+          <td class="val tr" data-label="Agosto 2026">0,92 %</td>
+          <td class="val tr" data-label="Septiembre 2026">1,39 %</td>
+          <td class="tr" data-label="Variación"><span class="trend trend--down">▲ +50,5 %</span></td>
+        </tr>
+        <tr>
+          <td class="lbl" data-label="Métrica">Tasa de bajas (correo)</td>
+          <td class="val tr" data-label="Agosto 2026">0,27 %</td>
+          <td class="val tr" data-label="Septiembre 2026">0,83 %</td>
+          <td class="tr" data-label="Variación"><span class="trend trend--down">▲ +211,3 %</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ 05. BENCHMARK ============ -->
+<section>
+  <div class="sect-num">05 · Benchmark del sector</div>
+  <h2 class="sect-title">Cómo nos comparamos<br><span style="color:var(--green)">con el sector</span></h2>
+  <p class="sect-lead">
+    Métricas puntuadas por Klaviyo con la base de referencia del sector
+    retail y eCommerce premium. Pese al 0 % de conversión del mes, el
+    canal mantiene <b>cinco calificaciones "Excelente"</b>, señal de que
+    la calidad editorial y la salud de la base no se han deteriorado.
+  </p>
+
+  <div class="evo">
+    <table>
+      <thead>
+        <tr>
+          <th>Métrica</th>
+          <th class="tr">Bonabola</th>
+          <th class="tr">Rendimiento</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="lbl" data-label="Métrica">Tasa de conversión · Todas las campañas (histórico)</td>
+          <td class="val tr" data-label="Bonabola">0,141 %</td>
+          <td class="tr" data-label="Rendimiento"><span class="badge badge--good">Excelente</span></td>
+        </tr>
+        <tr>
+          <td class="lbl" data-label="Métrica">Tasa de rebote · Todos los flujos</td>
+          <td class="val tr" data-label="Bonabola">0 %</td>
+          <td class="tr" data-label="Rendimiento"><span class="badge badge--good">Excelente</span></td>
+        </tr>
+        <tr>
+          <td class="lbl" data-label="Métrica">Tasa de bajas · Todos los flujos</td>
+          <td class="val tr" data-label="Bonabola">0 %</td>
+          <td class="tr" data-label="Rendimiento"><span class="badge badge--good">Excelente</span></td>
+        </tr>
+        <tr>
+          <td class="lbl" data-label="Métrica">Tasa de bajas · Flujos de bienvenida</td>
+          <td class="val tr" data-label="Bonabola">0 %</td>
+          <td class="tr" data-label="Rendimiento"><span class="badge badge--good">Excelente</span></td>
+        </tr>
+        <tr>
+          <td class="lbl" data-label="Métrica">Tasa de clics · Todas las campañas (histórico)</td>
+          <td class="val tr" data-label="Bonabola">5,38 %</td>
+          <td class="tr" data-label="Rendimiento"><span class="badge badge--good">Excelente</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="banner" style="margin-top:32px">
+    <div class="banner__tag">Lectura</div>
+    <div class="banner__text">
+      El canal mantiene <b>cinco calificaciones "Excelente"</b> según
+      Klaviyo, incluyendo la tasa de clic histórica del 5,38 % y las
+      cuatro métricas de salud de la base (rebote y bajas de flujos a 0 %).
+      El 0 % de conversión del mes no afecta a la salud del canal, solo
+      marca que la ejecución comercial no ha convertido en septiembre.
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUOTE ============ -->
+<section class="quote-wrap">
+  <p class="quote">
+    El canal entra en expansión real. <em>Más base, más campañas, más
+    mercados y un flujo récord del recomendador. La asignatura pendiente
+    es cerrar el ciclo: convertir todo este tráfico cualificado en ventas
+    reales a partir de octubre.</em>
+  </p>
+</section>
+
+<!-- ============ 06. PLAN DE ACCIÓN ============ -->
+<section>
+  <div class="sect-num">06 · Plan para el siguiente periodo</div>
+  <h2 class="sect-title">Cinco acciones<br>prioritarias para Octubre</h2>
+  <p class="sect-lead">
+    El plan de octubre pone el foco en <b>cerrar el ciclo de conversión</b>:
+    lanzar un test A/B transversal de formato en todos los flujos, optimizar
+    los CTA del bloque lanzamiento, hacer que el flujo del recomendador
+    convierta (ahora tiene clic pero no venta), cualificar la base nueva
+    que ha entrado por ads y volver al ritmo editorial habitual.
+  </p>
+
+  <ul class="actions">
+    <li>
+      <div>
+        <div class="act__title">Test A/B transversal: diseño maquetado vs email personal.</div>
+        <div class="act__body">
+          Aplicable a <b>todos los flujos</b>. Dos versiones del mismo
+          mensaje: una con diseño maquetado completo (plantilla visual
+          Bonabola) y otra en formato <b>email personal firmado por Anna</b>
+          (texto plano, estilo Gmail). Objetivo: medir cuál formato genera
+          más clic con la misma oferta y mismo contenido. Especialmente
+          urgente en el <b>Email 2 y 3 del POP UP</b> (actualmente 0 % clic)
+          y en los flujos con tráfico suficiente (recomendador, Abandono
+          de navegación). Marca el patrón para todos los flujos futuros.
+        </div>
+      </div>
+      <div class="act__meta high">Prioridad<b>Alta</b></div>
+    </li>
+    <li>
+      <div>
+        <div class="act__title">Revisar los CTA del lanzamiento y la ruta a web.</div>
+        <div class="act__body">
+          Los dos envíos del lanzamiento (presentación + disponible)
+          sumaron 1.162 destinatarios y 436 aperturas pero solo
+          <b>18 clics</b> y <b>0 conversiones</b>. Revisar el CTA
+          principal del email, la ubicación del botón de compra y el
+          flujo de la landing en Shopify. Posible test A/B con dos
+          versiones del mismo email.
+        </div>
+      </div>
+      <div class="act__meta high">Prioridad<b>Alta</b></div>
+    </li>
+    <li>
+      <div>
+        <div class="act__title">Optimizar el flujo del recomendador para convertir el clic en venta.</div>
+        <div class="act__body">
+          El flujo del formulario B2C de Meta Ads rinde al <b>18,89 % de
+          clic</b>, el mejor registro histórico del canal. Pero <b>sin
+          conversiones</b>: el clic no se traduce en venta. Revisar qué
+          pasa después del clic (landing, catálogo, UX de compra en Shopify),
+          analizar si el perfil de pala recomendada está alineado con lo
+          que el usuario encuentra al llegar, y segmentar los próximos
+          envíos por tipo de perfil de juego para personalizar la
+          comunicación.
+        </div>
+      </div>
+      <div class="act__meta high">Prioridad<b>Alta</b></div>
+    </li>
+    <li>
+      <div>
+        <div class="act__title">Cualificar la base nueva de 807 suscriptores.</div>
+        <div class="act__body">
+          Los 807 nuevos suscriptores de septiembre son el mayor crecimiento
+          histórico. Diseñar un envío de <b>cualificación</b> (encuesta
+          corta, email de bienvenida ampliado o segmentación por engagement)
+          para separar los contactos interesados reales de los de ads que
+          se darán de baja en los próximos meses y proteger la salud de
+          la base antes de que el rebote y las bajas sigan creciendo.
+        </div>
+      </div>
+      <div class="act__meta medium">Prioridad<b>Media</b></div>
+    </li>
+    <li>
+      <div>
+        <div class="act__title">Volver al ritmo editorial habitual.</div>
+        <div class="act__body">
+          Octubre es mes de calma editorial tras la intensidad de
+          septiembre. Volver al ritmo de <b>4 newsletters semanales</b>
+          (miércoles, 17:00) con ideas de contenido de marca y producto,
+          sin bloques comerciales grandes. Dar aire a la base y preparar
+          la próxima campaña fuerte para noviembre.
+        </div>
+      </div>
+      <div class="act__meta medium">Prioridad<b>Media</b></div>
+    </li>
+  </ul>
+</section>
+
+<!-- ============ 07. OBJETIVOS ============ -->
+<section>
+  <div class="sect-num">07 · Objetivos del próximo periodo</div>
+  <h2 class="sect-title">Octubre 2026<br><span style="color:var(--green)">números a batir</span></h2>
+  <p class="sect-lead">
+    Objetivos calibrados sobre la base actual y las acciones previstas.
+    El foco del periodo es volver a la conversión atribuida y cualificar
+    la base nueva, no crecer en volumen.
+  </p>
+
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="kpi__label">Conversiones atribuidas</div>
+      <div class="kpi__value">≥ 1</div>
+      <div class="kpi__sub">Actual <b>0</b> · recuperar la racha</div>
+      <span class="badge badge--good"><span class="arr">▲</span> Recuperar</span>
+    </div>
+    <div class="kpi kpi--purple">
+      <div class="kpi__label">Clic · Campañas</div>
+      <div class="kpi__value">≥ 2<small>%</small></div>
+      <div class="kpi__sub">Actual <b>1,67 %</b></div>
+      <span class="badge badge--good"><span class="arr">▲</span> Mejorar CTA</span>
+    </div>
+    <div class="kpi kpi--yellow">
+      <div class="kpi__label">Tasa de bajas</div>
+      <div class="kpi__value">≤ 0,5<small>%</small></div>
+      <div class="kpi__sub">Actual <b>0,83 %</b> · cualificar base</div>
+      <span class="badge badge--good"><span class="arr">▼</span> Contener</span>
+    </div>
+    <div class="kpi kpi--magenta">
+      <div class="kpi__label">Newsletters</div>
+      <div class="kpi__value">4</div>
+      <div class="kpi__sub">Ritmo editorial habitual</div>
+      <span class="badge badge--good"><span class="arr">▲</span> Consolidar</span>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot__row">
+    <div class="foot__brand">B O N A B O L A</div>
+    <div>www.bonabola.com</div>
+    <div>Navy Marketing · Septiembre 2026</div>
+  </div>
+</footer>
+
+</body>
+</html>
